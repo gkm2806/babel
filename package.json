@@ -1,0 +1,23 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gkm2806/babel.git"
+  },
+  "author": "gkm2806",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gkm2806/babel/issues"
+  },
+  "homepage": "https://github.com/gkm2806/babel#readme"
+}
