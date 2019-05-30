@@ -13,20 +13,27 @@ const xmltojson = async () => {
             var aulas = []
 
             for (var i = 0; i < result.Row.length; i++) {
-
-
-                try {
+               
+                    
+                try {                    
                     var newAula = {
                         "sigla": (result.Row[i].Cell[3].Data[0]._).toString(),
                         "turma": (result.Row[i].Cell[4].Data[0]._).toString(),
                         "materia": (result.Row[i].Cell[5].Data[0]._).toString(),
-                        "horaInicio": periodo2hora[(result.Row[i].Cell[6].Data[0]._).toString()][0],
-                        "horaFim": periodo2hora[(result.Row[i].Cell[6].Data[0]._).toString()][1],
+                        "horaInicio": (periodo2hora[(result.Row[i].Cell[6].Data[0]._)][0]).toString(),
+                        "horaFim": (periodo2hora[(result.Row[i].Cell[6].Data[0]._)][1]).toString(),
                         "professor": (result.Row[i].Cell[9].Data[0]._).toString(),
-                        "sala": (result.Row[i].Cell[10].Data[0]._).toString()
+                        "sala": (result.Row[i].Cell[10].Data[0]._).toString(),
+                       
+                    }
+                    var dias = (result.Row[i].Cell[7].Data[0]._).toString()
+                    for(var p = 0; p < dias.length ; p++){
+                        if(dias[p] == '1'){
+                            newAula.dia = dias2dia[p].toString()
+                            aulas.push(newAula)
+                        }
                     }
 
-                    aulas.push(newAula)
                 } catch (e) {
                     console.log("Erro: ", e)
                 } finally {
